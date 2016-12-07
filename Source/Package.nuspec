@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Cratis.Types</id>
+    <version>1.0.0-nightly001</version>
+    <authors>Einar Ingebrigtsen &lt;einar@dolittle.com&gt;</authors>
+    <owners>Einar Ingebrigtsen &lt;einar@dolittle.com&gt;</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Provides abstractions for discovering and working with types</description>
+    <tags></tags>
+    <dependencies>
+      <group targetFramework=".NETCoreApp1.0">
+        <dependency id="Microsoft.NETCore.App" version="[1.1.0, )" />
+        <dependency id="Cratis.Specifications" version="[1.0.0-nightly001, )" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

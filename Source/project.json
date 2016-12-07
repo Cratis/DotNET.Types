@@ -1,0 +1,22 @@
+{
+    "version": "1.0.0-*",
+    "description": "Provides abstractions for discovering and working with types",
+    "authors": [
+        "Einar Ingebrigtsen <einar@dolittle.com>"
+    ],
+    "buildOptions": {
+        "outputName": "Cratis.Types"
+    },
+    "dependencies": {
+        "Microsoft.NETCore.App": {
+            "type": "platform",
+            "version": "1.1.0"
+        },
+        "Cratis.Assemblies": "1.0.0-nightly001"
+    },
+    "frameworks": {
+        "netcoreapp1.0": {
+            "imports": "dnxcore50"
+        }
+    }
+}
