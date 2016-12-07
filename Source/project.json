@@ -12,7 +12,8 @@
             "type": "platform",
             "version": "1.1.0"
         },
-        "Cratis.Assemblies": "1.0.0-nightly001"
+        "Cratis.Assemblies": "1.0.0-nightly001",
+        "System.ComponentModel": "4.3.0"
     },
     "frameworks": {
         "netcoreapp1.0": {
