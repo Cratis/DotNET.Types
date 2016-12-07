@@ -7,6 +7,9 @@
     "buildOptions": {
         "outputName": "Cratis.Types"
     },
+    "tooling": {
+        "defaultNamespace": "Cratis.Types"
+    },
     "dependencies": {
         "Microsoft.NETCore.App": {
             "type": "platform",
