@@ -4,7 +4,6 @@
  *--------------------------------------------------------------------------------------------*/
 using System;
 using System.Linq;
-using Cratis.Types;
 using Machine.Specifications;
 using Moq;
 using It = Machine.Specifications.It;
