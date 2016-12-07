@@ -21,7 +21,9 @@
         "Machine.Specifications.Should": "0.11.0",
         "dotnet-test-mspec": "*",        
         "moq.netcore": "4.4.0-beta8",
-        "Microsoft.Extensions.DependencyModel": "1.0.0"
+        "Cratis.Assemblies": "1.0.0-nightly001",
+        "System.ComponentModel": "4.3.0"
+
     },
     "testRunner": "mspec",
     

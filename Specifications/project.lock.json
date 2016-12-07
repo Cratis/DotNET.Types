@@ -379,7 +379,7 @@
       "Microsoft.NETCore.Jit/1.0.4": {
         "type": "package"
       },
-      "Microsoft.NETCore.Platforms/1.0.1": {
+      "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -395,7 +395,7 @@
           "Microsoft.NETCore.Windows.ApiSets": "1.0.1"
         }
       },
-      "Microsoft.NETCore.Targets/1.0.1": {
+      "Microsoft.NETCore.Targets/1.1.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -762,10 +762,10 @@
           "lib/dotnet/System.Collections.Specialized.dll": {}
         }
       },
-      "System.ComponentModel/4.0.1": {
+      "System.ComponentModel/4.3.0": {
         "type": "package",
         "dependencies": {
-          "System.Runtime": "4.1.0"
+          "System.Runtime": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.0/System.ComponentModel.dll": {}
@@ -1756,11 +1756,11 @@
           "ref/netstandard1.0/System.Resources.ResourceManager.dll": {}
         }
       },
-      "System.Runtime/4.1.0": {
+      "System.Runtime/4.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "Microsoft.NETCore.Targets": "1.0.1"
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0"
         },
         "compile": {
           "ref/netstandard1.5/System.Runtime.dll": {}
@@ -2465,7 +2465,8 @@
         "framework": ".NETCoreApp,Version=v1.0",
         "dependencies": {
           "Cratis.Assemblies": "1.0.0-nightly001",
-          "Microsoft.NETCore.App": "1.1.0"
+          "Microsoft.NETCore.App": "1.1.0",
+          "System.ComponentModel": "4.3.0"
         }
       }
     }
@@ -2874,12 +2875,12 @@
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.Platforms/1.0.1": {
-      "sha512": "oyVbaR+hLNcpuPxY5PvU/AQP7g402Anu3YOORY+D+EVqtNrdWfJ0G5j7uQU6H5HFXIUviv+Ax6AIWA5re3tVSQ==",
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "sha512": "e3nCXWkL+tEWk0seStAbxwPuSfGrEJjO/D7n0CqEvx88hzVTZJiyKND1/x3xd/1P7kZQiD9jSHcAxoe4cwynIA==",
       "type": "package",
-      "path": "Microsoft.NETCore.Platforms/1.0.1",
+      "path": "Microsoft.NETCore.Platforms/1.1.0",
       "files": [
-        "Microsoft.NETCore.Platforms.1.0.1.nupkg.sha512",
+        "Microsoft.NETCore.Platforms.1.1.0.nupkg.sha512",
         "Microsoft.NETCore.Platforms.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -2899,12 +2900,12 @@
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.Targets/1.0.1": {
-      "sha512": "GulVjHzpUGDWWNkYGgh3zC/MAi1e8AO7xZAxRKqfg6ojBAok4Qt5Psa18t8PQ7+74m0pK9aXcjc8M4z5eXq85g==",
+    "Microsoft.NETCore.Targets/1.1.0": {
+      "sha512": "yxlAl5VNRc1lmAG8tFeCJHiUMDGphp7v5S2pZwfyxeUnkLHGVA2+l2EiExSnYZWkxmIe4qKSlyHPi8UoH3RmtA==",
       "type": "package",
-      "path": "Microsoft.NETCore.Targets/1.0.1",
+      "path": "Microsoft.NETCore.Targets/1.1.0",
       "files": [
-        "Microsoft.NETCore.Targets.1.0.1.nupkg.sha512",
+        "Microsoft.NETCore.Targets.1.1.0.nupkg.sha512",
         "Microsoft.NETCore.Targets.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -3420,12 +3421,12 @@
         "ref/xamarinmac20/_._"
       ]
     },
-    "System.ComponentModel/4.0.1": {
-      "sha512": "tzmr+EZlQ68uKw1c9Ri/ZsJ+gEr+8x23UzG+FyF9bItzuqTWZ6dXuoi+WT5nQ5o+5u2sPyo9ddN/aHrDj7Gtug==",
+    "System.ComponentModel/4.3.0": {
+      "sha512": "7/tUtXlueAKgq8/+h9OJXBsWyoi0LkMlPvz5lJHS6hRSII1QSn7taoAnTuf6vcp2q9uLFgwtGR12vFtONP9Uvw==",
       "type": "package",
-      "path": "System.ComponentModel/4.0.1",
+      "path": "System.ComponentModel/4.3.0",
       "files": [
-        "System.ComponentModel.4.0.1.nupkg.sha512",
+        "System.ComponentModel.4.3.0.nupkg.sha512",
         "System.ComponentModel.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -5882,12 +5883,12 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "System.Runtime/4.1.0": {
-      "sha512": "XdReFnT1YIIMMGe2Cq+P9S9+EnzI1sDeCvH7w/PI4CS5dY85Cz8i40Ky11tAOCUwPXzUYucTWzW9dAE/rztjug==",
+    "System.Runtime/4.3.0": {
+      "sha512": "pOvJx1oEdp+8RR2X/HuVSalitOPTx2oyPRC5ErINhpJ3iPedVZLB/OxvGHEDaH3IjzCoL863hNk8321AGP3DYw==",
       "type": "package",
-      "path": "System.Runtime/4.1.0",
+      "path": "System.Runtime/4.3.0",
       "files": [
-        "System.Runtime.4.1.0.nupkg.sha512",
+        "System.Runtime.4.3.0.nupkg.sha512",
         "System.Runtime.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -7587,12 +7588,13 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "Cratis.Assemblies >= 1.0.0-nightly001",
       "FluentAssertions >= 4.12.0",
       "Machine.Specifications >= 0.11.0",
       "Machine.Specifications.Should >= 0.11.0",
-      "Microsoft.Extensions.DependencyModel >= 1.0.0",
       "Microsoft.NETCore.App >= 1.1.0",
       "Source",
+      "System.ComponentModel >= 4.3.0",
       "System.Linq.Queryable >= 4.0.1",
       "dotnet-test-mspec",
       "moq.netcore >= 4.4.0-beta8"
