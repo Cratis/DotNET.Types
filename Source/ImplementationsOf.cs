@@ -20,10 +20,10 @@ namespace Cratis.Types
         /// <summary>
         /// Initializes a new instance of <see cref="ImplementationsOf{T}"/>
         /// </summary>
-        /// <param name="typeDiscoverer"><see cref="ITypeDiscoverer"/> to use for discovering types</param>
-        public ImplementationsOf(ITypeDiscoverer typeDiscoverer)
+        /// <param name="typeFinder"><see cref="ITypeDiscoverer"/> to use for discovering types</param>
+        public ImplementationsOf(ITypeFinder typeFinder)
         {
-            _types = typeDiscoverer.FindMultiple<T>();
+            _types = typeFinder.FindMultiple<T>();
         }
 
 #pragma warning disable 1591 // Xml Comments

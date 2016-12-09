@@ -14,7 +14,7 @@ namespace Cratis.Types.Specs.for_TypeFinder
 
         Establish context = () => contract_to_implementors_map_mock.Setup(c => c.GetImplementorsFor(typeof(ISingle))).Returns(new[] { typeof(Single) });
 
-        Because of = () => type_found = type_finder.FindSingle<ISingle>(contract_to_implementors_map_mock.Object);
+        Because of = () => type_found = type_finder.FindSingle<ISingle>();
 
         It should_not_return_null = () => type_found.ShouldNotBeNull();
         It should_return_correct_implementation_when = () => type_found.ShouldEqual(typeof(Single));

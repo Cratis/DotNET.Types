@@ -222,7 +222,7 @@ namespace Cratis.Types
         public static IEnumerable<Type> AllBaseAndImplementingTypes(this Type type)
         {
             return type.BaseTypes()
-                .Concat(type.GetInterfaces())
+                .Concat(type.GetTypeInfo().GetInterfaces())
                 .SelectMany(ThisAndMaybeOpenType)
                 .Where(t=>t != type && t != typeof(Object));
         }

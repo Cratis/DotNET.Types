@@ -21,11 +21,11 @@ namespace Cratis.Types
         /// <summary>
         /// Initalizes an instance of <see cref="IInstanceOf{T}"/>
         /// </summary>
-        /// <param name="typeDiscoverer"><see cref="ITypeDiscoverer"/> used for discovering types</param>
+        /// <param name="typeFinder"><see cref="ITypeDiscoverer"/> used for discovering types</param>
         /// <param name="serviceProvider"><see cref="IServiceProvider"/> used for managing instances of the types when needed</param>
-        public InstancesOf(ITypeDiscoverer typeDiscoverer, IServiceProvider serviceProvider)
+        public InstancesOf(ITypeFinder typeFinder, IServiceProvider serviceProvider)
         {
-            _types = typeDiscoverer.FindMultiple<T>();
+            _types = typeFinder.FindMultiple<T>();
             _serviceProvider = serviceProvider;
         }
 

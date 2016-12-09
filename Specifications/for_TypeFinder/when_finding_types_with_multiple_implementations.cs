@@ -15,7 +15,7 @@ namespace Cratis.Types.Specs.for_TypeFinder
 
         Establish context = () => contract_to_implementors_map_mock.Setup(c => c.GetImplementorsFor(typeof(IMultiple))).Returns(new[] { typeof(FirstMultiple), typeof(SecondMultiple) });
 
-        Because of = () => types_found = type_finder.FindMultiple<IMultiple>(contract_to_implementors_map_mock.Object);
+        Because of = () => types_found = type_finder.FindMultiple<IMultiple>();
 
         It should_not_return_null = () => types_found.ShouldNotBeNull();
         It should_contain_the_expected_types = () => types_found.ShouldContain(typeof(FirstMultiple), typeof(SecondMultiple));

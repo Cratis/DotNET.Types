@@ -9,10 +9,10 @@
     <description>Provides abstractions for discovering and working with types</description>
     <tags></tags>
     <dependencies>
-      <group targetFramework=".NETCoreApp1.0">
-        <dependency id="Microsoft.NETCore.App" version="[1.1.0, )" />
+      <group targetFramework="netstandard1.6">
         <dependency id="System.ComponentModel" version="[4.3.0, )" />
-        <dependency id="Cratis.Assemblies" version="[1.0.0-nightly001, )" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="[1.1.0, )" />
+        <dependency id="Cratis.Assemblies" version="[1.0.3, )" />
       </group>
     </dependencies>
   </metadata>

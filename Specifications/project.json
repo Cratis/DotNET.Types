@@ -15,20 +15,20 @@
             "version": "1.1.0"
         },
         "Source":"*",
-        "System.Linq.Queryable":"4.0.1",
+        "System.Linq.Queryable":"4.3.0",
         "FluentAssertions": "4.12.0",
         "Machine.Specifications": "0.11.0",
         "Machine.Specifications.Should": "0.11.0",
         "dotnet-test-mspec": "*",        
         "moq.netcore": "4.4.0-beta8",
-        "Cratis.Assemblies": "1.0.0-nightly001",
+        "Cratis.Assemblies": "1.0.3",
         "System.ComponentModel": "4.3.0"
 
     },
     "testRunner": "mspec",
     
     "frameworks": {
-        "netcoreapp1.0": {
+        "netcoreapp1.1": {
             "imports": "dnxcore50"
         }
     }

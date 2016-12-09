@@ -4,7 +4,11 @@
  *--------------------------------------------------------------------------------------------*/
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
+using Cratis.Assemblies;
 
 namespace Cratis.Types
 {
@@ -13,39 +17,73 @@ namespace Cratis.Types
     /// </summary>
     public class TypeFinder : ITypeFinder
     {
-#pragma warning disable 1591 // Xml Comments
-        public Type FindSingle<T>(IContractToImplementorsMap types)
+        IAssemblies _assemblies;
+        IContractToImplementorsMap _contractToImplementorsMap;
+
+        /// <summary>
+        /// Initializes a new instance of <see cref="TypeFinder"/>
+        /// </summary>
+        /// <param name="assemblies"><see cref="IAssemblies"/> for getting assemblies</param>
+        /// <param name="contractToImplementorsMap"><see cref="IContractToImplementorsMap"/> for keeping track of the relationship between contracts and implementors</param>
+        public TypeFinder(IAssemblies assemblies, IContractToImplementorsMap contractToImplementorsMap)
         {
-            var type = FindSingle(types, typeof(T));
+            _assemblies = assemblies;
+            _contractToImplementorsMap = contractToImplementorsMap;
+
+            CollectTypes();
+        }
+        
+#pragma warning disable 1591 // Xml Comments
+        public Type FindSingle<T>()
+        {
+            var type = FindSingle(typeof(T));
             return type;
         }
 
-        public IEnumerable<Type> FindMultiple<T>(IContractToImplementorsMap types)
+        public IEnumerable<Type> FindMultiple<T>()
         {
-            var typesFound = FindMultiple(types, typeof(T));
+            var typesFound = FindMultiple(typeof(T));
             return typesFound;
         }
 
-        public Type FindSingle(IContractToImplementorsMap types, Type type)
+        public Type FindSingle(Type type)
         {
-            var typesFound = types.GetImplementorsFor(type);
+            var typesFound = _contractToImplementorsMap.GetImplementorsFor(type);
             ThrowIfMultipleTypesFound(type, typesFound);
             return typesFound.SingleOrDefault();
         }
 
-        public IEnumerable<Type> FindMultiple(IContractToImplementorsMap types, Type type)
+        public IEnumerable<Type> FindMultiple(Type type)
         {
-            var typesFound = types.GetImplementorsFor(type);
+            var typesFound = _contractToImplementorsMap.GetImplementorsFor(type);
             return typesFound;
         }
 
-        public Type FindTypeByFullName(IContractToImplementorsMap types, string fullName)
+        public Type FindTypeByFullName(string fullName)
         {
-            var typeFound = types.All.Where(t => t.FullName == fullName).SingleOrDefault();
+            var typeFound = _contractToImplementorsMap.All.Where(t => t.FullName == fullName).SingleOrDefault();
             ThrowIfTypeNotFound(fullName, typeFound);
             return typeFound;
         }
 #pragma warning restore 1591 // Xml Comments
+
+        void CollectTypes()
+        {
+            var assemblies = _assemblies.GetAll();
+            Parallel.ForEach(assemblies, assembly =>
+            {
+                try
+                {
+                    var types = assembly.GetTypes();
+                    _contractToImplementorsMap.Feed(assembly.GetTypes());
+                }
+                catch (ReflectionTypeLoadException ex)
+                {
+                    foreach (var loaderException in ex.LoaderExceptions)
+                        Debug.WriteLine(string.Format("Failed to load: {0} {1}", loaderException.Source, loaderException.Message));
+                }
+            });
+        }
 
         void ThrowIfMultipleTypesFound(Type type, IEnumerable<Type> typesFound)
         {
